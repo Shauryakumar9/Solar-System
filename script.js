@@ -1,4 +1,5 @@
 "use strict";
+
 const menuButton = document.querySelector(".nav-menu");
 const opitonsTab = document.querySelector(".options");
 const optionContainer = document.querySelector(".option-container");
@@ -12,6 +13,7 @@ const bodyCard = document.querySelectorAll(".body-card-planet");
 const bodyCardMoon = document.querySelectorAll(".body-card-moon");
 const body = document.querySelectorAll(".body-card");
 const homeCard = document.querySelector(".home");
+
 let scroll = 0;
 opitonsTab.style.height = `${homeCard.clientHeight}px`;
 let counter = 0;
@@ -23,7 +25,6 @@ const obj = {
 const alignBtn = function () {
   optionContainer.style.height = `${opitonsTab.clientHeight}px`;
   optionContainer.style.width = `${opitonsTab.clientWidth}px`;
-  console.log(opitonsTab.clientHeight);
 };
 const openTab = function () {
   const num = Number(opitonsTab.style.right.substring(0, 2));
@@ -86,7 +87,6 @@ buttonNext.addEventListener("click", () => {
   }
   scroll++;
   counter--;
-  console.log(scrollValue);
   moveSlide(1);
 });
 headCard.forEach((card) => {
@@ -153,7 +153,6 @@ backBtn.addEventListener("click", () => {
 });
 bodyCard.forEach((entries) => {
   entries.addEventListener("click", () => {
-    console.log(entries);
     const loc = entries.children[1].children[0].textContent;
     window.location.href = `Planets/${loc}/index.html`;
   });
@@ -167,10 +166,8 @@ bodyCardMoon.forEach((entries) => {
 slides.forEach((entries) => {
   entries.addEventListener("click", () => {
     const loc = entries.children[1].textContent;
-    console.log(loc);
     if (loc === "The Sun") {
       window.location.href = `Star/index.html`;
-      console.log("sun");
     } else if (loc === "Moon") {
       window.location.href = `Moons/The Moon/index.html`;
     } else {
